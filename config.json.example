@@ -1,0 +1,14 @@
+{
+    "info": {
+        "names": ["Миш", "Мишка"]
+    },
+    "plugins": [
+        "Prefix",
+        "Echo"
+    ],
+    "tokens": {
+        "vkontakte": [
+            ""
+        ]
+    }
+}
