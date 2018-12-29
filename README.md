@@ -16,17 +16,7 @@ python -m pip install -r requirements.txt
 ```
 
 - Copy `config.json.example` and rename it to `config.json`. Enter your tokens
-    into lists of tokens for your service.
-
-```
-...
-    "tokens": {
-        "vkontakte": [
-            "YOUR VK GROUP API TOKEN"
-        ]
-    }
-...
-```
+    into managers' configurations' in "managers". Remove unused entities.
 
 ## Run
 - Run file `run.py` with python (use python3 if needed)

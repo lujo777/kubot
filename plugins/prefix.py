@@ -42,6 +42,7 @@ async def on_has_text(message, env):
             message.attachments,
             message.from_id,
             message.peer_id,
+            message.date,
             message.raw_update
         )
     )

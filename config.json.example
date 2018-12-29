@@ -1,14 +1,20 @@
 {
     "info": {
-        "names": ["Миш", "Мишка", "."]
+        "names": ["Миш", "Мишка", ".", "/"]
     },
     "plugins": [
         "Prefix",
         "Echo"
     ],
-    "tokens": {
-        "vkontakte": [
-            ""
-        ]
-    }
+    "managers": [
+        {
+            "type": "vkontakte",
+            "token": "api token"
+        },
+        {
+            "type": "telegram",
+            "token": "api token",
+            "proxy": ""
+        }
+    ]
 }
