@@ -36,7 +36,7 @@ async def on_has_text(message, env):
     if not (mention_match or match and match.group("text")):
         return "DONE"
 
-    env.parent_environment.set_message(
+    env.parent.set_message(
         Message(
             match and match.group("text") or message.text,
             message.attachments,
