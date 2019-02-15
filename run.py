@@ -1,6 +1,6 @@
 import json
 
-from kutana import (Kutana, TGManager, VKManager, load_configuration,
+from kutana import (Kutana, TGManager, VKManager, load_value,
                     load_plugins)
 
 
