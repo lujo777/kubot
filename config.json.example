@@ -2,10 +2,6 @@
     "info": {
         "names": ["Миш", "Мишка", ".", "/"]
     },
-    "plugins": [
-        "Prefix",
-        "Echo"
-    ],
     "managers": [
         {
             "type": "vkontakte",

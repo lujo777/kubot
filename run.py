@@ -14,16 +14,9 @@ with open("config.json", "r") as fh:
 
 kutana.storage["names"] = config["info"]["names"]
 
-plugins_storage = {plugin.name: plugin for plugin in load_plugins("plugins/")}
 
-
-# Register plugins specified in configuration
-plugins = []
-
-for plugin_name in config["plugins"]:
-    plugins.append(plugins_storage[plugin_name])
-
-kutana.executor.register_plugins(plugins)
+# Register plugins
+kutana.executor.register_plugins(load_plugins("plugins/"))
 
 
 # Add managers from configuration
