@@ -1,22 +1,21 @@
 import json
 
-from kutana import (Kutana, TGManager, VKManager, load_value,
-                    load_plugins)
+from kutana import (Kutana, TGManager, VKManager, load_plugins)
 
 
 # Create engine
-kutana = Kutana()
+app = Kutana()
 
 
 # Load configuration and available plugins
 with open("config.json", "r") as fh:
     config = json.load(fh)
 
-kutana.storage["names"] = config["info"]["names"]
+app.config["names"] = config["info"]["names"]
 
 
 # Register plugins
-kutana.executor.register_plugins(load_plugins("plugins/"))
+app.register_plugins(load_plugins("plugins/"))
 
 
 # Add managers from configuration
@@ -37,8 +36,8 @@ for manager_conf in config["managers"]:
     kwargs = manager_conf
     kwargs.pop("type")
 
-    kutana.add_manager(manager(**kwargs))
+    app.add_manager(manager(**kwargs))
 
 # Start engine if this file was run
 if __name__ == "__main__":
-    kutana.run()
+    app.run()

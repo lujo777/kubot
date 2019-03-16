@@ -8,7 +8,7 @@ plugin = Plugin(
 
 
 @plugin.on_startup()
-async def on_startup(kutana, rplugins):
+async def on_startup(app):
     lines = []
 
     def add(line=""):
@@ -18,7 +18,7 @@ async def on_startup(kutana, rplugins):
 
     add("🌲 Kubot_\n")
 
-    for plugin in rplugins:
+    for plugin in app.registered_plugins:
         if not hasattr(plugin, "cmds"):
             plain_plugins.append(plugin)
             continue

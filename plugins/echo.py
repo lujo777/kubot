@@ -8,9 +8,9 @@ plugin = Plugin(
 
 
 @plugin.on_startswith_text("echo ", "эхо ")
-async def on_echo(message, env, body):
-    if not body:
+async def on_echo(message, env):
+    if not env.body:
         await env.reply("You didn't specified text.")
         return
 
-    await env.reply("{}".format(body))
+    await env.reply("{}".format(env.body))

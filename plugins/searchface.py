@@ -22,7 +22,7 @@ plugin = Plugin(
 
 # Technical functions
 @plugin.on_startup()
-async def on_startup(kutana, rplugins):
+async def on_startup(app):
     plugin.session = aiohttp.ClientSession()
 
 

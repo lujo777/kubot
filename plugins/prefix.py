@@ -3,12 +3,12 @@ import re
 from kutana import Message, Plugin
 
 
-plugin = Plugin(name="Prefix")
+plugin = Plugin(name="Prefix", priority=5)
 
 
 @plugin.on_startup()
-async def on_startup(kutana, rplugins):
-    plugin.names = tuple(kutana.storage["names"])
+async def on_startup(app):
+    plugin.names = tuple(app.config["names"])
     plugin.separators = (" ", ",", ".", "!", "?")
 
     plugin.pattern = re.compile(
@@ -20,7 +20,7 @@ async def on_startup(kutana, rplugins):
     )
 
 
-@plugin.on_has_text(early=True)
+@plugin.on_has_text()
 async def on_has_text(message, env):
     match = plugin.pattern.match(message.text)
 
