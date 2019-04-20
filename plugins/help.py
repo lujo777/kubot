@@ -9,6 +9,7 @@ plugin = Plugin(
 
 @plugin.on_startup()
 async def on_startup(app):
+    global help_text
     lines = []
 
     def add(line=""):
